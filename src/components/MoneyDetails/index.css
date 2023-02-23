@@ -1,0 +1,69 @@
+/* Write your CSS here */
+
+.money-details-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0px;
+  margin-bottom: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .money-details-container {
+    justify-content: space-between;
+  }
+}
+
+.item-container {
+  background-color: #ecfccb;
+  border: 2px solid #84cc16;
+  border-radius: 15px;
+  padding: 12px;
+  width: 20%;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+
+.income-container {
+  background-color: #cffafe;
+  border: 2px solid #06b6d4;
+  border-radius: 15px;
+  padding: 12px;
+  width: 20%;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+
+.expense-container {
+  background-color: #ede9fe;
+  border: 2px solid #7c3aed;
+  border-radius: 15px;
+  padding: 12px;
+  width: 20%;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+
+.money-details-image {
+  height: 55px;
+  width: 55px;
+  margin-right: 20px;
+}
+
+.balance-text {
+  font-family: 'Roboto';
+  font-size: 15px;
+  font-weight: 500;
+  color: #475569;
+  margin-bottom: 10px;
+}
+
+.rupees-text {
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 700;
+  color: #475569;
+}
