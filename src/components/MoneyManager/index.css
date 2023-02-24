@@ -9,11 +9,20 @@ body {
 }
 
 .bg-container {
-  padding-top: 50px;
-  padding-bottom: 50px;
-  padding-left: 75px;
-  padding-right: 75px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 35px;
+  padding-right: 35px;
   min-height: 100vh;
+}
+
+@media screen and (min-width: 768px) {
+  .bg-container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 75px;
+    padding-right: 75px;
+  }
 }
 
 .content-container {
@@ -27,7 +36,7 @@ body {
   padding-top: 45px;
   padding-bottom: 25px;
   padding-left: 28px;
-  border-radius: 8px;
+  border-radius: 16px;
   margin-bottom: 15px;
 }
 
@@ -53,21 +62,39 @@ body {
 
 .bottom-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
+  margin-bottom: 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .bottom-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
 }
 
 .form {
+  height: 424px;
   padding-top: 30px;
   padding-bottom: 40px;
   padding-left: 34px;
   padding-right: 34px;
-  width: 50%;
+  width: 100%;
   border: 1px solid #cbd5e1;
   border-radius: 10px;
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
-  margin-right: 36px;
+  margin-bottom: 25px;
+}
+
+@media screen and (min-width: 768px) {
+  .form {
+    width: 40%;
+  }
 }
 
 .add-text {
@@ -75,7 +102,6 @@ body {
   font-size: 15px;
   font-weight: 700;
   color: #334155;
-  margin-bottom: 15px;
 }
 
 .label-text {
@@ -83,7 +109,6 @@ body {
   font-size: 12px;
   font-weight: 600;
   color: #7e858e;
-  margin-bottom: 6px;
 }
 
 .input-style {
@@ -96,9 +121,9 @@ body {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 10px;
-  margin-bottom: 15px;
   border: 1px solid;
   outline: none;
+  background-color: #ffffff;
 }
 
 .add-btn {
@@ -124,6 +149,14 @@ body {
   padding-bottom: 30px;
   padding-left: 30px;
   padding-right: 30px;
+  min-height: 326px;
+}
+
+@media screen and (min-width: 768px) {
+  .history-container {
+    width: 55%;
+    min-height: 424px;
+  }
 }
 
 .history-text {
@@ -155,5 +188,5 @@ body {
   font-size: 14px;
   font-weight: 600;
   color: #334155;
-  margin-right: 180px;
+  width: 31%;
 }

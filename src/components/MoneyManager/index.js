@@ -21,14 +21,14 @@ const transactionTypeOptions = [
 class MoneyManager extends Component {
   state = {
     transactionList: [],
-    title: '',
-    amount: '',
+    titleInput: '',
+    amountInput: '',
     optionId: transactionTypeOptions[0].optionId,
   }
 
   onAddTransaction = event => {
     event.preventDefault()
-    const {title, amount, optionId} = this.state
+    const {titleInput, amountInput, optionId} = this.state
     const optionType = transactionTypeOptions.find(
       each => each.optionId === optionId,
     )
@@ -37,28 +37,28 @@ class MoneyManager extends Component {
 
     const newTransaction = {
       id: uuidv4(),
-      title,
-      amount,
+      title: titleInput,
+      amount: parseInt(amountInput),
       type: displayText,
     }
 
     this.setState(prevState => ({
       transactionList: [...prevState.transactionList, newTransaction],
       optionId: transactionTypeOptions[0].optionId,
-      title: '',
-      amount: '',
+      titleInput: '',
+      amountInput: '',
     }))
   }
 
   onChangeInputTitle = event => {
     this.setState({
-      title: event.target.value,
+      titleInput: event.target.value,
     })
   }
 
   onChangeInputAmount = event => {
     this.setState({
-      amount: event.target.value,
+      amountInput: event.target.value,
     })
   }
 
@@ -84,7 +84,7 @@ class MoneyManager extends Component {
 
     transactionList.forEach(element => {
       if (element.type === transactionTypeOptions[1].displayText) {
-        expensesAmount += parseInt(element.amount)
+        expensesAmount += element.amount
       }
     })
     return expensesAmount
@@ -96,7 +96,7 @@ class MoneyManager extends Component {
 
     transactionList.forEach(eachItem => {
       if (eachItem.type === transactionTypeOptions[0].displayText) {
-        incomeAmount += parseInt(eachItem.amount)
+        incomeAmount += eachItem.amount
       }
     })
     return incomeAmount
@@ -111,9 +111,9 @@ class MoneyManager extends Component {
 
     transactionList.forEach(element => {
       if (element.type === transactionTypeOptions[0].displayText) {
-        incomeAmount += parseInt(element.amount)
+        incomeAmount += element.amount
       } else {
-        expensesAmount += parseInt(element.amount)
+        expensesAmount += element.amount
       }
     })
 
@@ -123,7 +123,7 @@ class MoneyManager extends Component {
   }
 
   render() {
-    const {title, amount, optionId, transactionList} = this.state
+    const {titleInput, amountInput, optionId, transactionList} = this.state
     const balanceAmount = this.getBalance()
     const incomeAmount = this.getIncome()
     const expensesAmount = this.getExpenses()
@@ -155,7 +155,7 @@ class MoneyManager extends Component {
                 type="text"
                 className="input-style"
                 placeholder="TITLE"
-                value={title}
+                value={titleInput}
               />
 
               <label className="label-text" htmlFor="amountId">
@@ -167,7 +167,7 @@ class MoneyManager extends Component {
                 type="text"
                 className="input-style"
                 placeholder="AMOUNT"
-                value={amount}
+                value={amountInput}
               />
 
               <label className="label-text" htmlFor="incomeId">
